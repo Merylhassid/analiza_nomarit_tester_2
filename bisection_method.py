@@ -94,13 +94,13 @@ def bisection_method(f, a, b, tol=1e-6):
 
 
 if __name__ == '__main__':
-    print(
-        "the git link: https://github.com/Merylhassid/analiza_nomarit_tester_2\ngroup:Almog Babila, Hay Carmi, Yagel Batito, Meryl Hassid\nMeryl Hassid 324569714")
     x = sp.symbols('x')
     f = x**2 - 4 * sin(x)
     g = (x-2)**2
     a = -1
     b = 3
+    print(f"the input function is {f} and the limts is {a} and {b}")
+    print(" https://github.com/Merylhassid/analiza_nomarit_tester_2\ngroup:Almog Babila 209477678, Hai karmi 207265678, Yagel Batito 318271863, Meryl Hasid 318271863\nstudent:Meryl Hassid 324569714")
     jump = (b-a)/10
     i=a+jump
     while i<=b:
