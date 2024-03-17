@@ -94,6 +94,8 @@ def bisection_method(f, a, b, tol=1e-6):
 
 
 if __name__ == '__main__':
+    print(
+        "the git link: https://github.com/Merylhassid/analiza_nomarit_tester_2\ngroup:Almog Babila, Hay Carmi, Yagel Batito, Meryl Hassid\nMeryl Hassid 324569714")
     x = sp.symbols('x')
     f = x**2 - 4 * sin(x)
     g = (x-2)**2
@@ -110,4 +112,3 @@ if __name__ == '__main__':
             print(f"none roots between ({a})-({i})\n")
         a = i
         i = i + jump
-        print("the git link: https://github.com/Merylhassid/analiza_nomarit_tester_2\ngroup:Almog Babila, Hay Carmi, Yagel Batito, Meryl Hassid\nMeryl Hassid 324569714")
