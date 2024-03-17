@@ -44,5 +44,8 @@ if __name__ == '__main__':
     b = np.array([7.0, 7.0, 11.0])
     X0 = np.zeros_like(b)
 
+    print(f"the input matrix is \n{A}\nand the input vector is {b}")
+    print(" https://github.com/Merylhassid/analiza_nomarit_tester_2\ngroup:Almog Babila 209477678, Hai karmi 207265678, Yagel Batito 318271863, Meryl Hasid 318271863\nstudent:Meryl Hassid 324569714")
+
     solution =gauss_seidel(A, b, X0)
     print(bcolors.OKBLUE,"\nApproximate solution:", solution)
