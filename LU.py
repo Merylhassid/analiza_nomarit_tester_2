@@ -26,11 +26,11 @@ def lu(A):
         # Swap the current row with the pivot row
         if pivot_row != i:
             e_matrix = swap_rows_elementary_matrix(N, i, pivot_row)
-            print(f"elementary matrix for swap between row {i} to row {pivot_row} :\n {e_matrix} \n")
-            A = np.dot(e_matrix, A)
-            print(f"The matrix after elementary operation :\n {A}")
-            print(bcolors.OKGREEN, "---------------------------------------------------------------------------",
-                  bcolors.ENDC)
+            # print(f"elementary matrix for swap between row {i} to row {pivot_row} :\n {e_matrix} \n")
+            # A = np.dot(e_matrix, A)
+            # print(f"The matrix after elementary operation :\n {A}")
+            # print(bcolors.OKGREEN, "---------------------------------------------------------------------------",
+            #       bcolors.ENDC)
 
         for j in range(i + 1, N):
             #  Compute the multiplier
@@ -39,10 +39,10 @@ def lu(A):
             e_inverse = np.linalg.inv(e_matrix)
             L = np.dot(L, e_inverse)
             A = np.dot(e_matrix, A)
-            print(f"elementary matrix to zero the element in row {j} below the pivot in column {i} :\n {e_matrix} \n")
-            print(f"The matrix after elementary operation :\n {A}")
-            print(bcolors.OKGREEN, "---------------------------------------------------------------------------",
-                  bcolors.ENDC)
+            # print(f"elementary matrix to zero the element in row {j} below the pivot in column {i} :\n {e_matrix} \n")
+            # print(f"The matrix after elementary operation :\n {A}")
+            # print(bcolors.OKGREEN, "---------------------------------------------------------------------------",
+            #       bcolors.ENDC)
 
     U = A
     return L, U
@@ -69,8 +69,8 @@ def backward_substitution(mat):
 
 def lu_solve(A_b):
     L, U = lu(A_b)
-    print("Lower triangular matrix L:\n", L)
-    print("Upper triangular matrix U:\n", U)
+    # print("Lower triangular matrix L:\n", L)
+    # print("Upper triangular matrix U:\n", U)
 
     result = backward_substitution(U)
     print(bcolors.OKBLUE, "\nSolution for the system:")
@@ -79,12 +79,13 @@ def lu_solve(A_b):
 
 
 if __name__ == '__main__':
-    A_b = [[1, -1, 2, -1, -8],
-           [2, -2, 3, -3, -20],
-           [1, 1, 1, 0, -2],
-           [1, -1, 4, 3, 4]]
+    A_b = [[2, 3, 4, 5, 6, 92],
+           [-5, 3, 4, -2, 3, 22],
+           [4, -5, -2, 2, 6, 42],
+           [4, 5, -1, -2, -3, -22],
+           [5, 5, 3, -3, 5, 41]]
 
     print(f"the input matrix is {A_b}")
-    print(" https://github.com/Merylhassid/analiza_nomarit_tester_2\ngroup:Almog Babila 209477678, Hai karmi 207265678, Yagel Batito 318271863, Meryl Hasid 318271863\nstudent:Meryl Hassid 324569714")
+    print(" https://github.com/Merylhassid/analiza_nomarit_tester_2\ngroup:Almog Babila 209477678, Hai karmi 207265678, Yagel Batito 318271863, Meryl Hassid 324569714 \nstudent:Meryl Hassid 324569714")
 
     lu_solve(A_b)
