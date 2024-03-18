@@ -58,7 +58,7 @@ def bisection_method(f, a, b, tol=1e-6):
 
     # while the diff af a&b is not smaller than tol, and k is not greater than the max possible steps
     while abs(b - a) > tol and k < steps:
-        c = a + (b - a) / 2  # Calculation of the middle value
+        c = a + (b - a) / 10  # Calculation of the middle value
 
         if f(c) == 0 :
             return c  # Procedure completed successfully
@@ -68,7 +68,7 @@ def bisection_method(f, a, b, tol=1e-6):
         else:
             a = c  # move backward
 
-        #print("{:<10} {:<15.6f} {:<15.6f} {:<15.6f} {:<15.6f} {:<15.6f} {:<15.6f}".format(k, a, b, f(a), f(b), c, f(c)))
+        #\print("{:<10} {:<15.6f} {:<15.6f} {:<15.6f} {:<15.6f} {:<15.6f} {:<15.6f}".format(k, a, b, f(a), f(b), c, f(c)))
         #saving the data
         K.append(k)
         A.append(a)
@@ -85,9 +85,9 @@ def bisection_method(f, a, b, tol=1e-6):
             raise Exception("The scalars a and b do not bound a root")
 
     #print the data
-    print("{:<10} {:<15} {:<15} {:<15} {:<15} {:<15} {:<15}".format("Iteration", "a", "b", "f(a)", "f(b)", "c", "f(c)"))
-    for i in range(k):
-        print("{:<10} {:<15.6f} {:<15.6f} {:<15.6f} {:<15.6f} {:<15.6f} {:<15.6f}".format(K[i], A[i], B[i], F_a[i], F_b[i], C[i], F_c[i]))
+    # print("{:<10} {:<15} {:<15} {:<15} {:<15} {:<15} {:<15}".format("Iteration", "a", "b", "f(a)", "f(b)", "c", "f(c)"))
+    # for i in range(k):
+    #     print("{:<10} {:<15.6f} {:<15.6f} {:<15.6f} {:<15.6f} {:<15.6f} {:<15.6f}".format(K[i], A[i], B[i], F_a[i], F_b[i], C[i], F_c[i]))
 
     return c  # return the current root
 
@@ -95,13 +95,12 @@ def bisection_method(f, a, b, tol=1e-6):
 
 if __name__ == '__main__':
     x = sp.symbols('x')
-    f = x**2 - 4 * sin(x)
-    g = (x-2)**2
-    a = -1
+    f = ((1*(x**2) - 7*x + 3)/(6*x))
+    a = 0
     b = 3
     print(f"the input function is {f} and the limts is {a} and {b}")
-    print(" https://github.com/Merylhassid/analiza_nomarit_tester_2\ngroup:Almog Babila 209477678, Hai karmi 207265678, Yagel Batito 318271863, Meryl Hasid 318271863\nstudent:Meryl Hassid 324569714")
-    jump = (b-a)/10
+    print(" https://github.com/Merylhassid/analiza_nomarit_tester_2\ngroup:Almog Babila 209477678, Hai karmi 207265678, Yagel Batito 318271863, Meryl Hassid 324569714\nstudent:Meryl Hassid 324569714")
+    jump = (b-a)/100
     i=a+jump
     while i<=b:
         try:
@@ -109,6 +108,6 @@ if __name__ == '__main__':
             print(bcolors.OKBLUE, f"\nThe equation f(x) has an approximate root at x = {roots}",bcolors.ENDC,)
             print()
         except Exception:
-            print(f"none roots between ({a})-({i})\n")
+            bla = 1
         a = i
         i = i + jump
